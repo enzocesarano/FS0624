@@ -29,30 +29,36 @@
 
     <main>
         <section>
-
-            <h1>Come creare un template per i post</h1>
-            <p>di Mario Rossi - pubblicato il 25-10-2020</p>
+            <div>
+                <h1>Come creare un template per i post</h1>
+                <p>di Mario Rossi - pubblicato il 25-10-2020</p>
+            </div>
 
             <article>
+                <div>
+                    <p>La prima cosa da fare è suddividere in blocchi logici la
+                        pagina, identificando le <strong>parti comuni</strong> da applicare a tutte le pagine</p>
 
-                <p>La prima cosa da fare è suddividere in blocchi logici la
-                    pagina, identificando le <strong>parti comuni</strong> da applicare a tutte le pagine</p>
-
-                <p>Le varie aree saranno quindi suddivise in:</p>
-                <ul>
-                    <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
-                    <li>Contenuti del tag centrare <code>&lt;main&gt;</code> (corpo centrale)</li>
-                    <li>Contenuti del fine pagina comuni, da inserire nel <code>&lt;footer&gt;</code></li>
-                </ul>
-
+                    <p>Le varie aree saranno quindi suddivise in:</p>
+                </div>
+                
+                <div>
+                    <ul>
+                        <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
+                        <li>Contenuti del tag centrare <code>&lt;main&gt;</code> (corpo centrale)</li>
+                        <li>Contenuti del fine pagina comuni, da inserire nel <code>&lt;footer&gt;</code></li>
+                    </ul>
+                </div>
             </article>
 
             <article>
+                <div>
+                    <h2>Formattazione del codice</h2>
+                    <p>l testo dell'articolo dovrà essere formattato per identificare tutte le parti da
+                        <strong>selezionare con i CSS</strong>. Perciò i passi saranno:
+                    </p>
+                </div>
 
-                <h2>Formattazione del codice</h2>
-
-                <p>l testo dell'articolo dovrà essere formattato per identificare tutte le parti da
-                    <strong>selezionare con i CSS</strong>. Perciò i passi saranno:</p>
                 <ol>
                     <li>Progettare il markup assegnando ad ogni specifico testo il tag appropriato</li>
                     <li>Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso</li>
@@ -61,6 +67,7 @@
 
                 <p>L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressoché totale.
                 </p>
+
                 <br />
 
                 <table>
@@ -101,25 +108,31 @@
                         </tr>
                     </tbody>
                 </table>
+            </article>
 
-                <p>Un test di validazione potrà essere fatto tramite il
-                    <a href="https://jigsaw.w3.org/css-validator/" target="_blank" title="CSS Validator">
-                        tool online</a>
-                    dedicato allo scopo. Una volta ottimizzato il tutto,
-                    avremo raggiunto il nostro obiettivo ed essere stati dei
-                    veri developers come loro:
-                </p>
-                <iframe width="600" height="300" src="https://www.youtube.com/embed/dvOvHXruEDM"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-
+            <article>
+                <div>
+                    <p>Un test di validazione potrà essere fatto tramite il
+                        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" title="CSS Validator">
+                            tool online</a>
+                        dedicato allo scopo. Una volta ottimizzato il tutto,
+                        avremo raggiunto il nostro obiettivo ed essere stati dei
+                        veri developers come loro:
+                    </p>
+                    <iframe width="600" height="300" src="https://www.youtube.com/embed/dvOvHXruEDM"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </article>
         </section>
     </main>
-    <div>
-        <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti
-            alla nostra newsletter:</p>
+    <section>
+        <div>
+            <h2>Novità</h2>
+            <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti
+                alla nostra newsletter:</p>
+        </div>
 
         <form>
             <fieldset>
@@ -129,45 +142,50 @@
                 <button type="submit" id="inserisci">Iscriviti!</button>
             </fieldset>
         </form>
-    </div>
+    </section>
+
     <aside>
+        <div>
+            <h2>Articoli correlati</h2>
+        </div>
 
-        <h2>Articoli correlati</h2>
-        <article>
-            <a href="javascript:void(0)">Validare il codice HTML</a>
+        <section>
+            <article>
+                <a href="javascript:void(0)">Validare il codice HTML</a>
 
-            <p>Categoria: develop</p>
-            <p>Data: 18-09-2020</p>
+                <p>Categoria: develop</p>
+                <p>Data: 18-09-2020</p>
 
-        </article>
-        <article>
-            <a href="javascript:void(0)">Correggere la sintassi</a>
+            </article>
 
-            <p>Categoria: develop</p>
-            <p>Data: 16-09-2020</p>
-        </article>
+            <article>
+                <a href="javascript:void(0)">Correggere la sintassi</a>
 
-        <article>
-            <a href="javascript:void(0)">Meno Kb nella pagina</a>
+                <p>Categoria: develop</p>
+                <p>Data: 16-09-2020</p>
+            </article>
 
-            <p>Categoria: ottimizzazione</p>
-            <p>Data: 30-09-2020</p>
-        </article>
+            <article>
+                <a href="javascript:void(0)">Meno Kb nella pagina</a>
 
+                <p>Categoria: ottimizzazione</p>
+                <p>Data: 30-09-2020</p>
+            </article>
+        </section>
     </aside>
 
     <hr />
 
     <footer>
-
-        <p>Blog Epicode &copy; 2023</p>
+        <div>
+            <p>Blog Epicode &copy; 2023</p>
+        </div>
 
         <address>
             Testata online di Mario Rossi, registrata con prot. n.213/2018 -
             via Luigi Einaudi 2 - Milano. P.IVA 00112233.
             <a href="mailto:info@epicode.school">info@epicode.school</a>
         </address>
-
     </footer>
 </body>
 
