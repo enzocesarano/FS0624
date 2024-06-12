@@ -1,0 +1,106 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    font-size: 1.35em;
+}
+
+main, footer {
+    width: 50%;
+    margin: auto;
+}
+
+.centro {
+    width: 100%;
+    text-align: center;
+}
+
+.background {
+    border-top: 1.8px solid #FFD877;
+    background-color: #FDFBF1;
+    padding: 8px;
+}
+
+.background p {
+    font-size: 0.8em;
+    color: #004D4C;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo img {
+    width: 14%;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 80px 0px 40px 0px;
+}
+
+.size {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.size video {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 4px 4px 8px grey;
+}
+
+.figcaption {
+    color: gray;
+    margin: 30px 0px;
+}
+
+
+.barra {
+    padding-left: 20px;
+    border-left: 1.8px solid #FFD877;
+}
+
+
+
+.rosso {
+    margin-bottom: 0;
+    color: #B5460F;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.ingredienti {
+    border-bottom: 1px solid cyan;
+    margin-top: 80px;
+}
+
+
+.celeste {
+    border-bottom: 1px solid cyan;
+    margin: 40px 0px;
+}
+
+
+.bold p {
+    font-weight: bolder;
+    margin: 40px 0px 0px 0px;
+}
+
+.bold ul {
+    margin-top: 10px
+}
+
+.bold li {
+    padding: 10px 0px;
+}
+
+.grassetto {
+    font-weight: bold
+}
+
+footer {
+    font-style: italic;
+}
