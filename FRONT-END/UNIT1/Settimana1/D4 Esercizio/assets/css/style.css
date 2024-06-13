@@ -10,6 +10,7 @@
 
 body {
     background-image: url(../img/sfondo.png);
+    background-position: right;
     line-height: 25px;
 }
 
