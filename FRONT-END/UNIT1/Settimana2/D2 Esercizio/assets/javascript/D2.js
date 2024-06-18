@@ -123,19 +123,19 @@ if (totalShoppingCart > 50) {
 
 console.log("*** ESERCIZIO 7***")
 
-let num8 = 15;
+let num8 = 35;
 let num9 = 28;
-let num10 = 33;
+let num10 = 214;
 
-if ((num8 > num9) && (num9 > num10)) {
+if ((num8 >= num9) && (num9 >= num10)) {
   console.log(num8 + ", " + num9 + ", " + num10);
-} else if ((num9 > num10) && (num10 > num8)) {
+} else if ((num9 >= num10) && (num10 >= num8)) {
   console.log(num9 + ", " + num10 + ", " + num8);
-} else if ((num10 > num8) && (num8 > num9)) {
+} else if ((num10 >= num8) && (num8 >= num9)) {
   console.log(num10 + ", " + num8 + ", " + num9);
-} else if ((num8 > num10) && (num10 > num9)) {
+} else if ((num8 >= num10) && (num10 >= num9)) {
   console.log(num8 + ", " + num10 + ", " + num9);
-} else if ((num9 > num8) && (num8 > num10)) {
+} else if ((num9 >= num8) && (num8 >= num10)) {
   console.log(num9 + ", " + num8 + ", " + num10);
 } else {
   console.log(num10 + ", " + num9 + ", " + num8);
