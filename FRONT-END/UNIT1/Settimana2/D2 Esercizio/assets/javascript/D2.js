@@ -36,9 +36,8 @@ if(num1 != 5){
 console.log("*** ESERCIZIO 3***")
 
 let num3 = 25;
-num3 = num3 % 5;
 
-if(num3 == 0){
+if((num3 % 5) == 0){
   console.log("divisibile per 5");
 } else {
   console.log("non divisibile per 5");
