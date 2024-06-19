@@ -194,7 +194,7 @@ console.log("*** ESERCIZIO 6 ***")
 let crewMass = 0;
 let i = 0;
 
-while(i < starWarsCharacters.length) {
+while (i < starWarsCharacters.length) {
   crewMass += starWarsCharacters[i].mass;
   i++;
 }
@@ -236,7 +236,7 @@ if (crewMass < 500) {
 
 console.log("*** ESERCIZIO 8 ***")
 
-for(let i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "n/a") {
     starWarsCharacters[i].gender = "robot";
   }
@@ -253,9 +253,9 @@ console.log(starWarsCharacters)
 
 console.log("*** ESERCIZIO 9 ***")
 
-for(let i = 0; i < femaleCharacters.length; i++) {
-  for(let e = 0; e < charactersNames.length; e++) {
-    if(femaleCharacters[i].name === charactersNames[e]) {
+for (let i = 0; i < femaleCharacters.length; i++) {
+  for (let e = 0; e < charactersNames.length; e++) {
+    if (femaleCharacters[i].name === charactersNames[e]) {
       delete charactersNames[e];
     }
   }
@@ -272,4 +272,4 @@ console.log("*** ESERCIZIO 10 ***")
 let ogettoRandom = Math.floor(Math.random() * starWarsCharacters.length);
 let nuovoRandom = starWarsCharacters[ogettoRandom];
 
-console.log(nuovoRandom);
+console.log("Il mio nome è " + nuovoRandom.name + ", la mia altezza è " + nuovoRandom.height + "cm e peso " + nuovoRandom.mass + "kg ecc...");
