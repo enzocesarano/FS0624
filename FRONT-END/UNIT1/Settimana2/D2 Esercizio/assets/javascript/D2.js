@@ -225,7 +225,7 @@ console.log(me)
 
 console.log("*** ESERCIZIO 13***")
 
-delete me.skills.pop();
+me.skills.pop();
 console.log(me)
 
 
