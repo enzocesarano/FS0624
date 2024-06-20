@@ -164,10 +164,12 @@ function giveMeRandom(casual) {
         let random2 = (Math.floor(Math.random() * 11));
         if (!random1.includes(random2)) {
             random1.push(random2);
+        } else {
+            i--;
         }
     }
 
     return random1;
 }
 
-console.log(giveMeRandom(4))
+console.log(giveMeRandom(9))
