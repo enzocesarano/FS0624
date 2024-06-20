@@ -84,7 +84,7 @@ function epify(string) {
     }
 }
 
-console.log(epify(', FOR EVER EPICODE!'))
+console.log(epify(', FS0624, EPICODE!'))
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
