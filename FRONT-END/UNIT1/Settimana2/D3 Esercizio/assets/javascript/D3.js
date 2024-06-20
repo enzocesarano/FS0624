@@ -253,13 +253,17 @@ console.log(starWarsCharacters)
 
 console.log("*** ESERCIZIO 9 ***")
 
+let nuovo =  [];
+
 for (let i = 0; i < femaleCharacters.length; i++) {
   for (let e = 0; e < charactersNames.length; e++) {
-    if (femaleCharacters[i].name === charactersNames[e]) {
-      delete charactersNames[e];
+    if (femaleCharacters[i].name != charactersNames[e]) {
+      nuovo.push(charactersNames[e]);
     }
   }
 }
+
+console.log(nuovo)
 
 console.log(charactersNames)
 
