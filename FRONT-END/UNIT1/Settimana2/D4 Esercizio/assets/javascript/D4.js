@@ -40,14 +40,14 @@ console.log("*** ESERCIZIO 3 ***")
 
 function crazyDiff(num) {
     if (num > 19) {
+        console.log(Math.abs(num - 19));
         return (num - 19) * 3;
     } else {
-        console.log(Math.abs(num - 19));
         return Math.abs(num - 19) * 3;
     }
 }
 
-console.log(crazyDiff(17));
+console.log(crazyDiff(24));
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
