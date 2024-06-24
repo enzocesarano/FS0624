@@ -114,7 +114,7 @@ function reverseString(string) {
     let inverso = string.split('');
     inverso.reverse();
     inverso = inverso.join('');
-    return string = inverso;
+    return inverso;
 }
 
 console.log(reverseString('EPICODE'))
