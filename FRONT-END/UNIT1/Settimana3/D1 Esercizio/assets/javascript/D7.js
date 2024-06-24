@@ -352,8 +352,8 @@ console.log(id('tt2395427'));
 
 console.log('*** ESERCIZIO 15 ***');
 
-function id(n) {
+function id2(n) {
   return movies.findIndex(item => Number(item.Year) === n);
 }
 
-console.log(id(2019));
+console.log(id2(2005));
