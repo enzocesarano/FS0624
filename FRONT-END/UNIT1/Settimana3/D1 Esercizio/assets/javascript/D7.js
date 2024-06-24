@@ -269,11 +269,13 @@ const movies = [
 console.log('*** ESERCIZIO 9 ***')
 
 function filmVecchio() {
+  let film = movies[0];
   movies.forEach(item => {
-    if (Number(item.Year) < 2100) {
-      
+    if (Number(item.Year) < Number(film.Year)){
+      film = item;      
     }
   })
+  return film;
 }
 
 console.log(filmVecchio());
@@ -336,11 +338,11 @@ console.log(sumAge())
 
 console.log('*** ESERCIZIO 14 ***');
 
-function id(n) {
-  return movies.find(item => item.imdbID === n);
+function id(numberID) {
+  return movies.find(item => item.imdbID === numberID);
 }
 
-console.log(id('tt4154796'))
+console.log(id('tt2395427'));
 
 
 /* ESERCIZIO 15 (findIndex)
