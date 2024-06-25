@@ -27,7 +27,7 @@ addClassToTitle();
 const paragrafo = document.querySelectorAll('div p');
 
 const changePcontent = function () {
-    paragrafo.forEach(item => item.textContent = 'Ciao')
+    paragrafo.forEach(item => item.innerText = 'Testo sostituito con JS')
 }
 
 changePcontent();
@@ -98,14 +98,12 @@ paintItGreen();
  Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
 */
 
-const secondoTitolo = document.querySelector('h2');
-
-let newTitle = { ...secondoTitolo.textContent };
 
 const makeItClickable = function () {
-    secondoTitolo.addEventListener("click", function () {
-        secondoTitolo.textContent = secondoTitolo.textContent.slice(0, -1);
-    })
+    const title1 = document.querySelector('h1');
+    title1.addEventListener("click", function () {
+        title1.innerText = title1.innerText.slice(0, -1);
+    });
 }
 
 makeItClickable();
@@ -171,7 +169,6 @@ tabellaTable.style.borderCollapse = 'collapse';
 tabellaTable.style.textAlign = 'center';
 
 const tabellaTHead = document.createElement('thead');
-tabellaTHead.style.border = '1px solid black';
 const tabellaTr = document.createElement('tr');
 
 tabella.appendChild(tabellaTable);
