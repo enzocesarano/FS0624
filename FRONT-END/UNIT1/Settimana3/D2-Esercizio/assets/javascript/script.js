@@ -131,92 +131,147 @@ revealFooterLink();
 
 const cards = [
     {
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Apple_logo_grey.svg',
         name: 'Apple',
         qty: 60,
         price: 1080,
     },
     {
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg',
         name: 'Samsung',
         qty: 45,
         price: 920,
     },
     {
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Nokia_2023.svg',
         name: 'Nokia',
         qty: 42,
         price: 480,
     },
     {
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg',
         name: 'Xiaomi',
         qty: 55,
         price: 750,
     },
     {
-        image: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Blackberry_Logo.svg',
         name: 'BlackBarry',
         qty: 28,
         price: 300,
     },
 ]
 
-const tabella = document.getElementById('tableArea');
 
-const tabellaTable = document.createElement('table');
-tabellaTable.style.borderCollapse = 'collapse';
-tabellaTable.style.textAlign = 'center';
-
-const tabellaTHead = document.createElement('thead');
-const tabellaTr = document.createElement('tr');
-
-tabella.appendChild(tabellaTable);
-tabellaTable.appendChild(tabellaTHead);
-tabellaTHead.appendChild(tabellaTr);
-
-const headTable = ['Immagine', 'Nome', 'Quantità', 'Price'];
-
-const tableHead = function () {
-    for (let i = 0; i < headTable.length; i++) {
-        tabellaTr.innerHTML += `<th>${headTable[i]}</th>`
-    }
-}
-
-tableHead();
-
-
-const tabellaBody = document.createElement('tbody');
-
-tabellaTable.appendChild(tabellaBody);
+const divTable = document.getElementById('tableArea');
 
 const generateTable = function () {
+    const tagTable = document.createElement('table');
+    const theadTable = document.createElement('thead');
+    const trHeadTable = document.createElement('tr');
+
+    divTable.appendChild(tagTable);
+    tagTable.appendChild(theadTable);
+    theadTable.appendChild(trHeadTable);
+
+    const thImage = document.createElement('th');
+    const thName = document.createElement('th');
+    const thQty = document.createElement('th');
+    const thPrice = document.createElement('th');
+
+    trHeadTable.appendChild(thImage);
+    trHeadTable.appendChild(thName);
+    trHeadTable.appendChild(thQty);
+    trHeadTable.appendChild(thPrice);
+
+    thImage.innerText = 'IMMAGINE';
+    thName.innerText = 'NOME PRODOTTO';
+    thQty.innerText = 'QUANTITÀ';
+    thPrice.innerText = 'PREZZO'
+
+    /* BODY */
+
+    const tbodyTable = document.createElement('tbody');
+    tagTable.appendChild(tbodyTable);
+
     for (let i = 0; i < cards.length; i++) {
-        tabellaBody.innerHTML += `<tr>
-        <td>${cards[i].image}</td>
-        <td>${cards[i].name}</td>
-        <td>${cards[i].qty}</td>
-        <td>${cards[i].price} €</td>
-        </tr>`;
-    }
+        const cellImage = document.createElement('td');
+        const cellName = document.createElement('td');
+        const cellQty = document.createElement('td');
+        const cellPrice = document.createElement('td');
+
+        const imgSVG = document.createElement('img');
+        imgSVG.setAttribute('src', cards[i].image);
+        imgSVG.classList.add('imageSize');
+        cellImage.appendChild(imgSVG);
+
+        cellName.innerText = cards[i].name;
+        cellQty.innerText = cards[i].qty;
+        cellPrice.innerText = `${cards[i].price} €`;
+
+        const trBodyTable = document.createElement('tr');
+        tbodyTable.appendChild(trBodyTable);
+
+        trBodyTable.appendChild(cellImage);
+        trBodyTable.appendChild(cellName);
+        trBodyTable.appendChild(cellQty);
+        trBodyTable.appendChild(cellPrice);
+    };
 }
 
-generateTable();
 
 /* ESERCIZIO 12
  Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
 */
 
-const addRow = function () { }
+const addRow = function () {
+    const newProduct = { ...cards[0] };
+    newProduct.image = 'https://upload.wikimedia.org/wikipedia/commons/8/88/Pixel_wordmark.svg';
+    newProduct.name = 'Google Pixel';
+    newProduct.qty = 31;
+    newProduct.price = 750;
+
+    cards.push(newProduct);
+    console.log(cards)
+}
+
+addRow();
+
+generateTable();
 
 /* ESERCIZIO 14
 Crea una funzione che nasconda le immagini della tabella quando eseguita
 */
 
-const hideAllImages = function () { }
+const hiddenImg = document.querySelectorAll('table img');
+const showImg = document.getElementById('show')
+const hiddenBtn = document.getElementById('hidden');
+
+const hideAllImages = function () {
+    hiddenBtn.addEventListener('click', function () {
+        hiddenImg.forEach(item => item.style.display = 'none');
+    })
+
+    showImg.addEventListener('click', function () {
+        hiddenImg.forEach(item => item.style.display = '');
+    })
+}
+
+hideAllImages();
 
 /* EXTRA ESERCIZIO 15
 Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
 */
 
-const changeColorWithRandom = function () { }
+const changeColor = document.getElementById('changeMyColor');
+
+const changeColorWithRandom = function () {
+    changeColor.addEventListener('click', function () {
+        const color1 = Math.floor(Math.random() * 256);
+        const color2 = Math.floor(Math.random() * 256);
+        const color3 = Math.floor(Math.random() * 256);
+        changeColor.style.color = `rgb(${color1}, ${color2}, ${color3})`;
+    });
+}
+
+changeColorWithRandom()
