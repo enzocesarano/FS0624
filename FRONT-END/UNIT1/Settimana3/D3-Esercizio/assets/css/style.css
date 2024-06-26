@@ -56,3 +56,15 @@ input::placeholder {
   display: inline-block;
   width: 97%;
 }
+
+.delete {
+  background: none;
+  border: none;
+  color: crimson;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.delete:hover {
+  transform: scale(110%);
+}

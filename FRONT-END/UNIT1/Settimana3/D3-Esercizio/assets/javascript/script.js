@@ -38,7 +38,8 @@ function stampList() {
         newList.innerText = listTutteCose[i];
 
         let btnDelete = document.createElement('button');
-        btnDelete.setAttribute('onclick', `deleteItem(${i});`);
+        btnDelete.setAttribute('onclick', `deleteElementList(${i});`);
+        btnDelete.classList.add('delete')
         btnDelete.innerHTML = '<i class="fa fa-trash"></i>'
 
         printList.appendChild(newContain);
@@ -48,7 +49,7 @@ function stampList() {
 }
 
 
-function deleteItem(element) {
+function deleteElementList(element) {
 	listTutteCose.splice(element, 1);
 	stampList();
 }
