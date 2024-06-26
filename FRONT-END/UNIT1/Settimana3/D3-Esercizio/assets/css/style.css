@@ -16,24 +16,29 @@ body {
   background-color: #ffffff;
   padding: 20px;
 }
-  
 
-input, #btnAddList {
+
+input,
+#btnAddList {
   border-radius: 5px;
   height: 30px;
   margin-bottom: 20px;
 }
 
 input {
-  width: 77%;
+  width: 75%;
   margin-right: 35px;
   font-size: 1.2em;
+  padding-left: 10px;
+}
+
+ p:first-letter {
+  text-transform: uppercase;
 }
 
 input::placeholder {
-  padding: 10px;
+  padding: 3px;
 }
-
 
 
 #btnAddList {
@@ -50,11 +55,12 @@ input::placeholder {
   background-color: rgb(161, 221, 255);
 }
 
-#printList div p{
+#printList div p {
   display: inline-block;
   width: 97%;
   cursor: pointer;
   user-select: none;
+  text-transform: capitalize;
 }
 
 .delete {
