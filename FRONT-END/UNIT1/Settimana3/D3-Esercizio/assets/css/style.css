@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: rgb(235, 36, 253)
+}
+
+.totalBody {
+  margin: 350px auto;
+  width: 30%;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+  
+
+input, #btnAddList {
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 77%;
+  margin-right: 35px;
+  font-size: 1.2em;
+}
+
+input::placeholder {
+  padding: 10px;
+}
+
+
+
+#btnAddList {
+  color: #ffffff;
+  width: 15%;
+  border: none;
+  background-color: crimson;
+}
+
+.boxList {
+  margin: 0 auto 10px auto;
+  border: 1px solid rgb(134, 134, 134);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(161, 221, 255);
+
+}
+
+#printList div p{
+  display: inline-block;
+  width: 97%;
+}

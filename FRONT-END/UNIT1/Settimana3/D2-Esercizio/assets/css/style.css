@@ -40,6 +40,6 @@ table {
   object-fit: contain;
 }
 
-table td:first-child {
+table td {
   width: 20%;
 }
