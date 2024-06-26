@@ -43,10 +43,10 @@ function stampList() {
         btnDelete.innerHTML = '<i class="fa fa-trash"></i>'
 
         newList.addEventListener('click', function(e) {
-            if(e.target.style.textDecoration === 'none') {
+            if(e.target.style.textDecoration === '') {
                 e.target.style.textDecoration = 'line-through';
             } else {
-                e.target.style.textDecoration = 'none';
+                e.target.style.textDecoration = '';
             }
         })
 

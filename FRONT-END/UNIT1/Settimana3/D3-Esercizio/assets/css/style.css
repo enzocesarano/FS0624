@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(235, 36, 253)
+  background-color: rgb(226, 43, 202);
 }
 
 .totalBody {
@@ -45,7 +45,6 @@ input::placeholder {
 
 .boxList {
   margin: 0 auto 10px auto;
-  border: 1px solid rgb(134, 134, 134);
   border-radius: 5px;
   padding: 10px;
   background-color: rgb(161, 221, 255);
@@ -54,6 +53,8 @@ input::placeholder {
 #printList div p{
   display: inline-block;
   width: 97%;
+  cursor: pointer;
+  user-select: none;
 }
 
 .delete {
