@@ -42,6 +42,14 @@ function stampList() {
         btnDelete.classList.add('delete')
         btnDelete.innerHTML = '<i class="fa fa-trash"></i>'
 
+        newList.addEventListener('click', function(e) {
+            if(e.target.style.textDecoration === 'none') {
+                e.target.style.textDecoration = 'line-through';
+            } else {
+                e.target.style.textDecoration = 'none';
+            }
+        })
+
         printList.appendChild(newContain);
         newContain.appendChild(newList);
         newContain.appendChild(btnDelete);
