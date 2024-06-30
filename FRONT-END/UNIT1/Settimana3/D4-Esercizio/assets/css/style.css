@@ -25,10 +25,31 @@ h1 {
   margin-bottom: 30px;
 }
 
-button {
+#cartelle {
+  width: 100%;
+  display: inline-block;
+}
+
+.cartella {
+  display: inline-block;
+  width: 350px;
+  height: 210px;
+  margin: 20px;
+}
+
+
+#btnRandomNumber {
   background-color: crimson;
   width: 80px;
   height: 40px;
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+#btnBuy {
+  background-color: crimson;
+  width: 80px;
+  height: 25px;
   border-radius: 10px;
 }
 
@@ -47,6 +68,27 @@ button {
   color: black;
 }
 
-.divNumeriEstratti {
-  background-color: red;
+input {
+  color: grey;
+  font-size: 1.3em;
+  width: 50px;
+}
+
+.divEstratti {
+  background-color: yellow;
+  transition-duration: 1s;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+.ultimo div {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.ultimo div p {
+  display: inline-block;
+  margin: 5px;
 }
