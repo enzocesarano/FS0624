@@ -475,3 +475,11 @@ footer a {
         font-size: 1.1em;
     }
 }
+
+
+@media print {
+    header, footer, iframe, aside, section {
+        display: none;
+    }
+
+}
