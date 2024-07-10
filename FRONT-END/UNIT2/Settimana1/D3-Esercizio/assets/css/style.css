@@ -239,10 +239,10 @@ article h2 {
 
     body {
         padding: 0;
-        display: flex;
     }
 
     main {
+        margin-left: 22%;
         padding: 10px;
     }
 
@@ -254,35 +254,33 @@ article h2 {
     }
 
     header {
-        width: 27%;
+        position: fixed;
+        top: 0;
+        width: 20%;
         height: 100vh;
         margin-right: 25px;
     }
 
     nav ul li {
         width: 100%;
-        font-size: 1em;
+        font-size: 0.5em;
         margin: 2px;
-        padding: 20px 30px;
+        padding: 10px 20px;
         border-radius: 50px;
+        margin: 10px;
     }
 
     nav ul li:nth-of-type(1) {
-        font-size: 1.4em;
+        font-size: 0.8em;
         padding: 10px;
-    }
-
-    #logo {
-        padding-right: 15px;
     }
 
     nav ul {
         align-items: center;
     }
 
-
     #logo {
-        width: 35px;
+        width: 20px;
         margin-right: 10px;
     }
 
@@ -297,7 +295,7 @@ article h2 {
     .schede {
         width: 120px;
         height: 170px;
-        font-size: 0.8em;
+        font-size: 0.7em;
         border-radius: 30px;
     }
     
