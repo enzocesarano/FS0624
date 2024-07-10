@@ -6,6 +6,7 @@ body {
   padding: 15px;
   background-image: url("../img/sfondo.png");
   background-position: center center;
+  user-select: none;
 }
 
 * {
@@ -45,6 +46,7 @@ hr {
 aside div {
   position: relative;
 }
+
 
 .icon2 {
   position: absolute;
