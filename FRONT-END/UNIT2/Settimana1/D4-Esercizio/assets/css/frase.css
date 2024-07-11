@@ -34,7 +34,7 @@ body {
 .parole i {
     position: absolute;
     left: 53%;
-    top: 53%;
+    top: 53.6%;
     opacity: 0;
     transform-origin: bottom;
     animation: paroleAlterne 6s infinite;
