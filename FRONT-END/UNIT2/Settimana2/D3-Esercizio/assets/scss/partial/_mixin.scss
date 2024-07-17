@@ -1,0 +1,31 @@
+@mixin title-big {
+    font-size: 4em;
+    font-weight: bolder;
+    margin: 0.5em 0;
+}
+
+@mixin floating {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.63);
+    transition-duration: 0.3s; 
+    opacity: 0.8;
+}
+
+
+@mixin grid($element) {
+    display: flex;
+    div img {
+        width: calc(100% / $element);
+    }
+};
+
+
+@for $index from 1 through 12 {
+    grid-#{$index} {
+        @include grid($index);
+    }
+}

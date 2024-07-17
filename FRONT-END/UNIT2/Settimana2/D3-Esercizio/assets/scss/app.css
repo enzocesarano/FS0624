@@ -1,0 +1,395 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.list-style-none {
+  list-style-type: none;
+}
+.list-style-none a {
+  text-decoration: none;
+}
+
+grid-1 {
+  display: flex;
+}
+grid-1 div img {
+  width: 100%;
+}
+
+grid-2 {
+  display: flex;
+}
+grid-2 div img {
+  width: 50%;
+}
+
+grid-3 {
+  display: flex;
+}
+grid-3 div img {
+  width: 33.3333333333%;
+}
+
+grid-4 {
+  display: flex;
+}
+grid-4 div img {
+  width: 25%;
+}
+
+grid-5 {
+  display: flex;
+}
+grid-5 div img {
+  width: 20%;
+}
+
+grid-6 {
+  display: flex;
+}
+grid-6 div img {
+  width: 16.6666666667%;
+}
+
+grid-7 {
+  display: flex;
+}
+grid-7 div img {
+  width: 14.2857142857%;
+}
+
+grid-8 {
+  display: flex;
+}
+grid-8 div img {
+  width: 12.5%;
+}
+
+grid-9 {
+  display: flex;
+}
+grid-9 div img {
+  width: 11.1111111111%;
+}
+
+grid-10 {
+  display: flex;
+}
+grid-10 div img {
+  width: 10%;
+}
+
+grid-11 {
+  display: flex;
+}
+grid-11 div img {
+  width: 9.0909090909%;
+}
+
+grid-12 {
+  display: flex;
+}
+grid-12 div img {
+  width: 8.3333333333%;
+}
+
+.hero {
+  background-color: #640fc5;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f4f4f4;
+}
+
+.font-size-sm {
+  font-size: 0.67em;
+  margin: 1em;
+}
+
+.font-size-normal {
+  font-size: 0.83em;
+  margin: 1em;
+}
+
+.font-size-md {
+  font-size: 1em;
+  margin: 1em;
+}
+
+.font-size-lg {
+  font-size: 1.17em;
+  margin: 1em;
+}
+
+.font-size-xl {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.font-size-xxl {
+  font-size: 2em;
+  margin: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: bolder;
+  margin: 0.5em 0;
+}
+
+.button1-color {
+  background-color: #0e6eff;
+}
+
+.button2-color {
+  background-color: #ff8700;
+}
+
+.button3-color {
+  background-color: #4caf50;
+}
+
+.floating {
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 15px;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.63);
+  transition-duration: 0.3s;
+  opacity: 0.8;
+}
+.floating:hover {
+  opacity: 1;
+}
+
+.padding-block-sm {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.margin-block-sm {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.padding-block-normal {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.margin-block-normal {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.padding-block-md {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.margin-block-md {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.padding-block-lg {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.margin-block-lg {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.padding-block-xl {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.margin-block-xl {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.padding-block-xxl {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+.margin-block-xxl {
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.padding-inline-sm {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.margin-inline-sm {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.padding-inline-normal {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.margin-inline-normal {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.padding-inline-md {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.margin-inline-md {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.padding-inline-lg {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.margin-inline-lg {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.padding-inline-xl {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.margin-inline-xl {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.padding-inline-xxl {
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+.margin-inline-xxl {
+  margin-left: 21px;
+  margin-right: 21px;
+}
+
+.padding-sm {
+  padding: 2px;
+}
+
+.margin-sm {
+  margin: 2px;
+}
+
+.padding-normal {
+  padding: 5px;
+}
+
+.margin-normal {
+  margin: 5px;
+}
+
+.padding-md {
+  padding: 8px;
+}
+
+.margin-md {
+  margin: 8px;
+}
+
+.padding-lg {
+  padding: 12px;
+}
+
+.margin-lg {
+  margin: 12px;
+}
+
+.padding-xl {
+  padding: 16px;
+}
+
+.margin-xl {
+  margin: 16px;
+}
+
+.padding-xxl {
+  padding: 21px;
+}
+
+.margin-xxl {
+  margin: 21px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.j-c-center {
+  justify-content: center;
+}
+
+.j-c-sb {
+  justify-content: space-between;
+}/*# sourceMappingURL=app.css.map */

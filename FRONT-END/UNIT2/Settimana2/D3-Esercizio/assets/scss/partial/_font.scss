@@ -1,0 +1,31 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $text-color;
+}
+
+$font-size: (
+    sm: 0.67em,
+    normal: 0.83em,
+    md: 1em,
+    lg: 1.17em,
+    xl: 1.5em,
+    xxl: 2em,
+);
+
+@each $prop, $value in $font-size {
+    .font-size-#{$prop} {
+        font-size: $value;
+        margin: 1em;
+    }
+};
+
+.text-center {
+    text-align: center
+}
+
+
+h1 {
+    @include title-big;
+};
+
+

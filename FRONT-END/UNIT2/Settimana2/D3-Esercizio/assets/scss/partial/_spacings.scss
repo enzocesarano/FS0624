@@ -1,0 +1,66 @@
+$my-space: (
+    sm: 2px,
+    normal: 5px,
+    md: 8px,
+    lg: 12px,
+    xl: 16px,
+    xxl: 21px,
+);
+
+$my-padding: block, inline;
+
+
+@each $element in $my-padding {
+    @each $prop, $size in $my-space {
+        @if($element =='block') {
+            .padding-#{$element}-#{$prop} {
+                padding-top: $size;
+                padding-bottom: $size;
+            }
+        }
+
+        @else {
+            .padding-#{$element}-#{$prop} {
+                padding-left: $size;
+                padding-right: $size;
+            }
+        }
+
+        @if($element =='block') {
+            .margin-#{$element}-#{$prop} {
+                margin-top: $size;
+                margin-bottom: $size;
+            }
+        }
+
+        @else {
+            .margin-#{$element}-#{$prop} {
+                margin-left: $size;
+                margin-right: $size;
+            }
+        }
+    }
+}
+
+@each $prop, $size in $my-space {
+    .padding-#{$prop} {
+        padding: $size;
+    }
+
+    .margin-#{$prop} {
+        margin: $size;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.j-c-center {
+    justify-content: center;
+}
+
+.j-c-sb {
+    justify-content: space-between;
+}
+

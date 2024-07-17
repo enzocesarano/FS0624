@@ -1,0 +1,13 @@
+$text-color: #f4f4f4;
+
+$button: (
+    button1: #0e6eff,
+    button2: #ff8700,
+    button3: #4caf50,
+);
+
+$bg_hero: #640fc5;
+
+.hero {
+    background-color: $bg_hero;
+}

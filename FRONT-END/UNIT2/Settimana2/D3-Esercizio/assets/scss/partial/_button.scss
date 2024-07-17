@@ -1,0 +1,12 @@
+@each $prop, $value in $button {
+    .#{$prop}-color {
+        background-color: $value;
+    }
+};
+
+.floating {
+    @include floating();
+    &:hover {
+        opacity: 1;
+    }
+} 
