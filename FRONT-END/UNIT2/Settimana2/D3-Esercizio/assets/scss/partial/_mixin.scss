@@ -19,7 +19,7 @@
 @mixin grid($element) {
     display: flex;
     img {
-        width: calc(100% / $element);
+        width: calc(90% / $element);
         border-radius: 20px;
         margin: 15px;
     }
