@@ -55,88 +55,112 @@ table {
   text-decoration: none;
 }
 
-grid-1 {
+.grid-1 {
   display: flex;
 }
-grid-1 div img {
+.grid-1 img {
   width: 100%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-2 {
+.grid-2 {
   display: flex;
 }
-grid-2 div img {
+.grid-2 img {
   width: 50%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-3 {
+.grid-3 {
   display: flex;
 }
-grid-3 div img {
+.grid-3 img {
   width: 33.3333333333%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-4 {
+.grid-4 {
   display: flex;
 }
-grid-4 div img {
+.grid-4 img {
   width: 25%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-5 {
+.grid-5 {
   display: flex;
 }
-grid-5 div img {
+.grid-5 img {
   width: 20%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-6 {
+.grid-6 {
   display: flex;
 }
-grid-6 div img {
+.grid-6 img {
   width: 16.6666666667%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-7 {
+.grid-7 {
   display: flex;
 }
-grid-7 div img {
+.grid-7 img {
   width: 14.2857142857%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-8 {
+.grid-8 {
   display: flex;
 }
-grid-8 div img {
+.grid-8 img {
   width: 12.5%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-9 {
+.grid-9 {
   display: flex;
 }
-grid-9 div img {
+.grid-9 img {
   width: 11.1111111111%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-10 {
+.grid-10 {
   display: flex;
 }
-grid-10 div img {
+.grid-10 img {
   width: 10%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-11 {
+.grid-11 {
   display: flex;
 }
-grid-11 div img {
+.grid-11 img {
   width: 9.0909090909%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
-grid-12 {
+.grid-12 {
   display: flex;
 }
-grid-12 div img {
+.grid-12 img {
   width: 8.3333333333%;
+  border-radius: 20px;
+  margin: 15px;
 }
 
 .hero {

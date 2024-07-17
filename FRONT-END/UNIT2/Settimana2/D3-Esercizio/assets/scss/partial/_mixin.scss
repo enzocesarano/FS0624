@@ -18,14 +18,16 @@
 
 @mixin grid($element) {
     display: flex;
-    div img {
+    img {
         width: calc(100% / $element);
+        border-radius: 20px;
+        margin: 15px;
     }
 };
 
 
 @for $index from 1 through 12 {
-    grid-#{$index} {
+    .grid-#{$index} {
         @include grid($index);
     }
 }
