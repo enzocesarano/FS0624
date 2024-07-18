@@ -5,7 +5,7 @@
 @import 'scss-bootstrap/mixins';
 @import 'scss-bootstrap/utilities';
 
-$new-primary: rgb(117, 80, 254);
+$new-primary: #7550fe;
 $new-success: #1ACB98;
 
 
@@ -13,7 +13,6 @@ $new-theme-colors: (
   'primary': $new-primary,
   'success': $new-success,
 );
-
 
 $new-spacers: (
   6: $spacer * 4,
