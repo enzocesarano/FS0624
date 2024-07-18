@@ -1,0 +1,38 @@
+@import 'scss-bootstrap/functions';
+@import 'scss-bootstrap/variables';
+@import 'scss-bootstrap/variables-dark';
+@import 'scss-bootstrap/maps';
+@import 'scss-bootstrap/mixins';
+@import 'scss-bootstrap/utilities';
+
+$new-primary: rgb(117, 80, 254);
+$new-success: #1ACB98;
+
+
+$new-theme-colors: (
+  'primary': $new-primary,
+  'success': $new-success,
+);
+
+
+$new-spacers: (
+  6: $spacer * 4,
+);
+
+$utilities: map-merge($utilities,
+    ("width": map-merge(map-get($utilities, "width"),
+        (values: map-merge(map-get(map-get($utilities, "width"), "values"),
+            (5: 5%,
+              10: 10%,
+              15: 15%,
+              20: 20%,
+              ),
+          ),
+        ),
+      ),
+    ));
+
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+$spacers: map-merge($spacers, $new-spacers);
+
+@import 'scss-bootstrap/bootstrap.scss';
