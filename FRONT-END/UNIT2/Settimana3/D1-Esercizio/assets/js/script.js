@@ -46,6 +46,12 @@ class Pet {
     }
 }
 
+const pet1 = new Pet('Bobby', 'Vincenzo', 'Cane', 'Pastore Tedesco')
+const pet2 = new Pet('Luna', 'Vincenzo', 'Gatto', 'Persiano')
+
+console.log(pet1.comparaOwner(pet2))
+
+
 
 const form = document.getElementById('form')
 
@@ -103,5 +109,3 @@ form.addEventListener('submit', function (e) {
     cardBody.appendChild(breedPet)
 
 })
-
-console.log(pets)
