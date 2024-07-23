@@ -116,6 +116,16 @@ $utilities: map-merge($utilities,
         ));
 
 
+span {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+p {
+    font-size: 1.3em;
+}
+
 input {
     text-transform: capitalize;
 }

@@ -48,17 +48,37 @@ const form = document.getElementById('form')
 const yourName = document.getElementById('yourName')
 const btnInvia = document.getElementById('btnInvia')
 const btnReset = document.getElementById('btnReset')
+const listDisplay = document.getElementById('list')
+const namesDisplay = document.getElementById('name')
 
 const names = []
 
+display()
 
-
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
     pushNames()
+    display()
+    form.reset()
 })
 
 function pushNames() {
+    names.pop()
     names.push(yourName.value)
+    localStorage.setItem('names', names)
     console.log(names)
 }
+
+function display() {
+    namesDisplay.innerText = ''
+    const namesStorage = localStorage.getItem('names')
+    namesDisplay.innerText = namesStorage
+    listDisplay.appendChild(namesDisplay)
+}
+
+
+btnReset.addEventListener('click', function (e) {
+    e.preventDefault()
+    localStorage.clear()
+    namesDisplay.innerText = ''
+})
