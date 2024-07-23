@@ -1,33 +1,6 @@
 @charset "UTF-8";
-/* span {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
 input {
-    text-transform: capitalize;
-}
-
-p {
-    padding: 5px;
-    border-radius: 5px;
-    border-bottom: 1px solid $secondary;
-}
-
-.card-body i {
-    align-self: flex-end;
-    font-size: 1.5em;
-    color: lighten($danger, 10%);
-    transition-duration: 0.3s;
-    cursor: pointer;
-    &:hover {
-        color: $danger;
-        transform: scale(1.1);
-    }
-} */
-p {
-  margin: 0 !important;
+  text-transform: capitalize;
 }
 
 /*!

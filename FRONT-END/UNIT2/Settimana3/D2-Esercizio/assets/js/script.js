@@ -41,3 +41,24 @@ function hour() {
 
 day();
 setInterval(second, 1000);
+
+
+
+const form = document.getElementById('form')
+const yourName = document.getElementById('yourName')
+const btnInvia = document.getElementById('btnInvia')
+const btnReset = document.getElementById('btnReset')
+
+const names = []
+
+
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+    pushNames()
+})
+
+function pushNames() {
+    names.push(yourName.value)
+    console.log(names)
+}
