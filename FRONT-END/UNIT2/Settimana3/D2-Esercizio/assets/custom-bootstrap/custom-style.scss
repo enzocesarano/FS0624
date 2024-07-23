@@ -115,7 +115,7 @@ $utilities: map-merge($utilities,
             ),
         ));
 
-span {
+/* span {
     font-size: 1.5em;
     font-weight: bold;
     text-transform: capitalize;
@@ -131,10 +131,6 @@ p {
     border-bottom: 1px solid $secondary;
 }
 
-body {
-    padding: 5rem;
-}
-
 .card-body i {
     align-self: flex-end;
     font-size: 1.5em;
@@ -145,6 +141,11 @@ body {
         color: $danger;
         transform: scale(1.1);
     }
+} */
+
+
+p {
+    margin: 0 !important;
 }
 
 @import "scss/bootstrap.scss";

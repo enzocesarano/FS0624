@@ -68,44 +68,62 @@ form.addEventListener('submit', function (e) {
     const pet = new Pet(inputName, inputOwner, inputSpecies, inputBreed)
     pets.push(pet)
     
-    form.reset()
-
     const list = document.getElementById('list')
     list.classList.add('row', 'row-cols-5')
 
-    const colonna = document.createElement('div')
-    colonna.classList.add('col', 'd-flex', 'justify-content-center', 'mb-4')
+    list.innerText = ''
 
-    const card = document.createElement('div')
-    card.classList.add('card')
-    card.style.width = '18rem'
+    for (let i = 0; i < pets.length; i++) {
 
-    const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
+        const colonna = document.createElement('div')
+        colonna.classList.add('col', 'd-flex', 'justify-content-center', 'mb-4')
 
-    const namePet = document.createElement('p')
-    namePet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
-    namePet.innerHTML = `Name: <span>${inputName}</span>`
+        const card = document.createElement('div')
+        card.classList.add('card')
+        card.style.width = '18rem'
 
-    const ownerPet = document.createElement('p')
-    ownerPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
-    ownerPet.innerHTML = `Owner: <span>${inputOwner}</span>`
+        const cardBody = document.createElement('div')
+        cardBody.classList.add('card-body', 'd-flex', 'flex-column')
 
-    const speciesPet = document.createElement('p')
-    speciesPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
-    speciesPet.innerHTML = `Species: <span>${inputSpecies}</span>`
+        const namePet = document.createElement('p')
+        namePet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
+        namePet.innerHTML = `Name: <span>${inputName}</span>`
 
-    const breedPet = document.createElement('p')
-    breedPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
-    breedPet.innerHTML = `Breed: <span>${inputBreed}</span>`
+        const ownerPet = document.createElement('p')
+        ownerPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
+        ownerPet.innerHTML = `Owner: <span>${inputOwner}</span>`
+
+        const speciesPet = document.createElement('p')
+        speciesPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
+        speciesPet.innerHTML = `Species: <span>${inputSpecies}</span>`
+
+        const breedPet = document.createElement('p')
+        breedPet.classList.add('d-flex', 'justify-content-between', 'align-items-baseline')
+        breedPet.innerHTML = `Breed: <span>${inputBreed}</span>`
+
+        const deleteCard = document.createElement('i')
+        deleteCard.classList.add('bi', 'bi-trash3-fill')
 
 
-    list.appendChild(colonna)
-    colonna.appendChild(card)
-    card.appendChild(cardBody)
-    cardBody.appendChild(namePet)
-    cardBody.appendChild(ownerPet)
-    cardBody.appendChild(speciesPet)
-    cardBody.appendChild(breedPet)
+        list.appendChild(colonna)
+        colonna.appendChild(card)
+        card.appendChild(cardBody)
+        cardBody.appendChild(namePet)
+        cardBody.appendChild(ownerPet)
+        cardBody.appendChild(speciesPet)
+        cardBody.appendChild(breedPet)
+        cardBody.appendChild(deleteCard)
 
+    }
+
+    form.reset()
+
+
+
+    console.log(pets)
 })
+
+
+function deleteElementList(element) {
+    pets.splice(element, 1);
+}
