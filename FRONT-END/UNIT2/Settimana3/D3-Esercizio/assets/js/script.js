@@ -96,15 +96,15 @@ function shopDisplay() {
         colShop.classList.add('col', 'd-flex', 'mb-5')
 
         const imgBookShop = document.createElement('img')
-        imgBookShop.classList.add('card-img-top', 'w-30', 'me-3')
+        imgBookShop.classList.add('card-img-top', 'w-30')
         imgBookShop.setAttribute('src', `${element1.img}`)
         imgBookShop.setAttribute('alt', `libro ${element1.title}`)
 
         const cardBodyShop = document.createElement('div')
-        cardBodyShop.classList.add('card-body', 'flex-grow-1')
+        cardBodyShop.classList.add('card-body', 'flex-grow-1', 'p-3')
 
         const titleBookShop = document.createElement('h4')
-        titleBookShop.classList.add('card-title', 'text-light', 'mt-3')
+        titleBookShop.classList.add('card-title', 'text-light')
         titleBookShop.innerText = `${element1.title}`
 
         const divPrice = document.createElement('div')
@@ -115,7 +115,7 @@ function shopDisplay() {
         priceBookShop.innerText = `${element1.price}€`
 
         const btnRemoveShop = document.createElement('i')
-        btnRemoveShop.classList.add('bi', 'bi-trash3-fill', 'align-self-end', 'm-2', 'fs-6')
+        btnRemoveShop.classList.add('bi', 'bi-trash3-fill', 'align-self-end', 'm-2', 'fs-4')
         btnRemoveShop.addEventListener('click', function(e) {
                 e.target.closest('.col').remove()
                 shopping.splice(index, 1)
