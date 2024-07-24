@@ -91,7 +91,7 @@ const shopBody = document.getElementById('shopBody')
 function shopDisplay() {
     shopping.forEach(element => {
         const colShop = document.createElement('div')
-        colShop.classList.add('col', 'd-flex')
+        colShop.classList.add('col', 'd-flex', 'mb-5')
 
         const imgBookShop = document.createElement('img')
         imgBookShop.classList.add('card-img-top', 'w-30', 'me-3')
@@ -113,7 +113,8 @@ function shopDisplay() {
         priceBookShop.innerText = `${element.price}€`
 
         const btnRemoveShop = document.createElement('i')
-        btnRemoveShop.classList.add('bi', 'bi-trash3-fill', 'align-self-end', 'm-2', 'fs-6', 'text-light')
+        btnRemoveShop.classList.add('bi', 'bi-trash3-fill', 'align-self-end', 'm-2', 'fs-6')
+        /* btnRemoveShop.setAttribute('onclick', removeShop()) */
 
         shopBody.appendChild(colShop)
         colShop.appendChild(imgBookShop)
@@ -122,6 +123,7 @@ function shopDisplay() {
         colShop.appendChild(divPrice)
         divPrice.appendChild(priceBookShop)
         divPrice.appendChild(btnRemoveShop)
+
     });
 }
 

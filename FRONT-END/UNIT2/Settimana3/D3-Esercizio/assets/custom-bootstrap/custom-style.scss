@@ -117,7 +117,7 @@ $utilities: map-merge($utilities,
 
 
 
-.card i {
+.card i, #shopBody i {
     color: lighten($danger, 20%);
     transition-duration: 0.3s;
     cursor: pointer;

@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.card i {
+.card i, #shopBody i {
   color: #eb8c95;
   transition-duration: 0.3s;
   cursor: pointer;
 }
-.card i:hover {
+.card i:hover, #shopBody i:hover {
   color: #dc3545;
   transform: scale(1.1);
 }
