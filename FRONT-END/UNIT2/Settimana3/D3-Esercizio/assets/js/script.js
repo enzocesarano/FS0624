@@ -27,7 +27,7 @@ function displayPrint(books) {
         col.classList.add('col')
 
         const card = document.createElement('div')
-        card.classList.add('card', 'h-100', 'justify-content-between')
+        card.classList.add('card', 'h-100', 'justify-content-between', 'shadow')
 
         const imgBook = document.createElement('img')
         imgBook.classList.add('h-60', 'object-fit-cover')
