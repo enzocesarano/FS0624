@@ -79,6 +79,7 @@ function displayPrint(books) {
             btnBuy.addEventListener('click', function () {
                 shopping.push(element)
                 localStorage.setItem('book', JSON.stringify(shopping))
+                shopDisplay()
             })
         }
 
@@ -89,6 +90,8 @@ function displayPrint(books) {
 const shopBody = document.getElementById('shopBody')
 
 function shopDisplay() {
+    shopBody.innerText = ''
+
     shopping.forEach(element => {
         const colShop = document.createElement('div')
         colShop.classList.add('col', 'd-flex', 'mb-5')
