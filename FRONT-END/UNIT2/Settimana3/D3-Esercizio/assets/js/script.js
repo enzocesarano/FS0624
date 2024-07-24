@@ -27,22 +27,22 @@ function displayPrint(books) {
         col.classList.add('col')
 
         const card = document.createElement('div')
-        card.classList.add('card')
+        card.classList.add('card', 'h-100', 'justify-content-between')
 
         const imgBook = document.createElement('img')
-        imgBook.classList.add('card-img-top')
+        imgBook.classList.add('h-60', 'object-fit-cover')
         imgBook.setAttribute('src', `${element.img}`)
         imgBook.setAttribute('alt', `libro ${element.title}`)
 
         const cardBody = document.createElement('div')
-        cardBody.classList.add('card-body')
+        cardBody.classList.add('d-flex', 'flex-column', 'justify-content-between', 'p-3', 'flex-grow-1')
 
         const titleBook = document.createElement('h4')
-        titleBook.classList.add('card-title')
+        titleBook.classList.add('card-title', 'fs-small')
         titleBook.innerText = `${element.title}`
 
         const priceBook = document.createElement('p')
-        priceBook.classList.add('card-text', 'fs-5')
+        priceBook.classList.add('card-text', 'fs-6', 'fw-bold', 'text-center' )
         priceBook.innerText = `${element.price}€`
 
         const divButton = document.createElement('div')
