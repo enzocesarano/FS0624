@@ -20,8 +20,9 @@ const object = function (query) {
         })
 
         .then((imgSrc) => {
+            console.log(imgSrc)
             row.innerHTML += `
-            <div class="col col-md-4">
+            <div class="col col-6">
                 <div class="card mb-4 shadow-sm">
                     <img
                       src="${imgSrc.src.tiny}"
@@ -29,22 +30,10 @@ const object = function (query) {
                     />
                     <div class="card-body">
                       <h5 class="card-title fs-6">Photographer: <strong class="fs-5">${imgSrc.photographer}</strong></h5>
-                      <p class="card-text">${imgSrc.alt}
-                      </p>
+                      <a class="card-text">${imgSrc.photographer_url}
+                      </a>
                       <div
-                        class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary view">
-                            View
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary hidden">
-                            Hide
-                          </button>
-                        </div>
+                        class="d-flex justify-content-center align-items-center">
                         <small class="text-muted">id: ${imgSrc.id}</small>
                       </div>
                     </div>
