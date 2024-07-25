@@ -47,7 +47,7 @@ load2.addEventListener('click', function () {
     object('cat');
 });
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
     object(inputSearch.value)
 })
@@ -72,7 +72,7 @@ function displayCard(card) {
                         <div class="btn-group">
                           <button
                             type="button"
-                            class="btn btn-sm btn-outline-secondary">
+                            class="btn btn-sm btn-outline-secondary view">
                             View
                           </button>
                           <button
@@ -88,15 +88,26 @@ function displayCard(card) {
                 </div>
                 `
 
+        const view = document.querySelectorAll('.view')
+        
+        view.forEach(btn => {
+            btn.addEventListener('click', function () {
+                location.assign(`./details.html?photoId=${element.id}`)
+            })
+        })
+
+
     });
 
     const hidden = document.querySelectorAll('.hidden')
 
+
     hidden.forEach(button => {
-       button.addEventListener('click', function (e) {
+        button.addEventListener('click', function (e) {
             e.target.closest('.col').remove()
         })
     })
+
 
 }
 
