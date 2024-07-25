@@ -32,7 +32,7 @@ const object = function (query) {
                     />
                     <div class="card-body">
                       <h5 class="card-title fs-6">Photographer: <strong class="fs-5">${imgSrc.photographer}</strong></h5>
-                      <a class="card-text">${imgSrc.photographer_url}
+                      <a href="${imgSrc.photographer_url}" target="_blank" class="card-text">${imgSrc.photographer_url}
                       </a>
                       <div
                         class="d-flex justify-content-center align-items-center">
