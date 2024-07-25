@@ -1,5 +1,6 @@
 const addressBarParameters = new URLSearchParams(location.search).get('photoId')
-
+const row = document.getElementById('row')
+const main = document.getElementById('main')
 
 const object = function (query) {
     fetch(`https://api.pexels.com/v1/photos/${query}`, {
@@ -21,11 +22,12 @@ const object = function (query) {
 
         .then((imgSrc) => {
             console.log(imgSrc)
+            main.style.backgroundColor = `${imgSrc.avg_color}`
             row.innerHTML += `
             <div class="col col-6">
                 <div class="card mb-4 shadow-sm">
                     <img
-                      src="${imgSrc.src.tiny}"
+                      src="${imgSrc.src.large2x}"
                       class="bd-placeholder-img card-img-top"
                     />
                     <div class="card-body">
