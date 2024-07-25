@@ -58,7 +58,7 @@ function displayCard(card) {
     card.forEach(element => {
         row.innerHTML += `
             <div class="col col-md-4">
-                <div class="card mb-4 shadow-sm">
+                <div id="${element.id}" class="card mb-4 shadow-sm view">
                     <img
                       src="${element.src.tiny}"
                       class="bd-placeholder-img card-img-top"
@@ -71,9 +71,8 @@ function displayCard(card) {
                         class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <button
-                            id="${element.id}"
                             type="button"
-                            class="btn btn-sm btn-outline-secondary view">
+                            class="btn btn-sm btn-outline-secondary">
                             View
                           </button>
                           <button
@@ -100,8 +99,9 @@ function displayCard(card) {
             })
         })
 
-    const hidden = document.querySelectorAll('.hidden')
 
+
+    const hidden = document.querySelectorAll('.hidden')
 
     hidden.forEach(button => {
         button.addEventListener('click', function (e) {
