@@ -23,6 +23,7 @@ const object = function (query) {
 
         .then((imgSrc) => {
             displayCard(imgSrc.photos)
+            console.log(imgSrc.photos)
         })
 
         .catch((error) => {
@@ -33,6 +34,10 @@ const object = function (query) {
 
 const load = document.getElementById('load')
 const load2 = document.getElementById('load-2')
+const form = document.getElementById('form')
+const inputSearch = document.getElementById('search')
+
+
 
 load.addEventListener('click', function () {
     object('soccer');
@@ -41,6 +46,11 @@ load.addEventListener('click', function () {
 load2.addEventListener('click', function () {
     object('cat');
 });
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+    object(inputSearch.value)
+})
 
 
 function displayCard(card) {
@@ -71,7 +81,7 @@ function displayCard(card) {
                             Hide
                           </button>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">id: ${element.id}</small>
                       </div>
                     </div>
                   </div>
