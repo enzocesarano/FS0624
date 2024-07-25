@@ -55,7 +55,7 @@ form.addEventListener('submit', function (e) {
 
 function displayCard(card) {
     row.innerHTML = ''
-    card.forEach((element) => {
+    card.forEach(element => {
         row.innerHTML += `
             <div class="col col-md-4">
                 <div class="card mb-4 shadow-sm">
@@ -71,6 +71,7 @@ function displayCard(card) {
                         class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <button
+                            id="${element.id}"
                             type="button"
                             class="btn btn-sm btn-outline-secondary view">
                             View
@@ -88,16 +89,16 @@ function displayCard(card) {
                 </div>
                 `
 
-        const view = document.querySelectorAll('.view')
-        
+    });
+
+    const view = document.querySelectorAll('.view')
+
         view.forEach(btn => {
             btn.addEventListener('click', function () {
-                location.assign(`./details.html?photoId=${element.id}`)
+                const photoId = btn.id;
+                location.assign(`./details.html?photoId=${photoId}`)
             })
         })
-
-
-    });
 
     const hidden = document.querySelectorAll('.hidden')
 
