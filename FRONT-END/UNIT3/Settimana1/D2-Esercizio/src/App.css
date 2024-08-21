@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.book-cover {
+  height: 100%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,43 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-
-#buttonContainer {
-  display: flex;
-  margin-bottom: 30px;
-}
-
-.button {
-  font-size: 1.2em;
-  border-radius: 10px;
-  padding: 10px 25px;
-  border: none;
-  background: transparent;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  margin: 0 10px;
-}
-
-.green {
-  background: green;
-  color: white;
-}
-
-.green:hover {
-  background: rgb(1, 180, 1);
-}
-
-.gray {
-  background: gray;
-  color: white;
-}
-
-.gray:hover {
-  background: rgb(180, 180, 180);
-}
-
-.imgSize {
-  width: 30%;
 }

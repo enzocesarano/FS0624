@@ -1,18 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import CustomNavbar from "./components/CustomNavbar";
-import CustomFooter from "./components/CustomFooter";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import MyNav from './components/MyNav'
+import MyFooter from './components/MyFooter'
+import Welcome from './components/Welcome'
+import AllTheBooks from './components/AllTheBooks'
+import { Container } from 'react-bootstrap'
 
 function App() {
   return (
     <>
-      <CustomNavbar />
-
-      <CustomFooter />
+      <MyNav />
+      <Container>
+        <Welcome />
+        <AllTheBooks />
+      </Container>
+      <MyFooter />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
