@@ -6,9 +6,11 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const MyNav = () => {
+
+  const location = useLocation()
 
     return (
       <header className="mb-3">
@@ -27,16 +29,24 @@ const MyNav = () => {
               className="justify-content-between"
             >
               <Nav>
-                <Link to="/tv-show" className="nav-link me-3">
+                <Link to="/tv-show" className={`nav-link me-3 ${
+                location.pathname === '/tv-show' ? ' active' : ''
+              }`}>
                   TV Shows
                 </Link>
-                <Link to="/movies" className="nav-link me-3">
+                <Link to="/movies" className={`nav-link me-3 ${
+                location.pathname === '/movies' ? ' active' : ''
+              }`}>
                   Movies
                 </Link>
-                <Link to="/recently-added" className="nav-link me-3">
+                <Link to="/recently-added" className={`nav-link me-3 ${
+                location.pathname === '/recently-added' ? ' active' : ''
+              }`}>
                   Recently Added
                 </Link>
-                <Link to="/my-list" className="nav-link">My List</Link>
+                <Link to="/my-list" className={`nav-link me-3 ${
+                location.pathname === '/my-list' ? ' active' : ''
+              }`}>My List</Link>
               </Nav>
               <div className="nav-link d-flex align-items-center justify-content-lg-end position-relative">
                 <Link to="/kids" className="nav-link me-3 active text-light">
