@@ -32,7 +32,7 @@ const MainSearch = () => {
   return (
     <Container>
       <Row>
-        <Col xs={10} className="mx-auto my-3">
+        <Col xs={10} className="mx-auto my-3 d-flex align-items-baseline justify-content-between">
           <h1 className="display-1">Remote Jobs Search</h1>
           <Link className="fs-1" to={`/favorite`}>
                  Preferiti</Link>
