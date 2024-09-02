@@ -25,7 +25,7 @@ const Favorite = () => {
                 <i className="fs-3 bi bi-heart-fill text-danger pointer" onClick={() => {
                     dispatch({
                       type: "REMOVE_FROM_PREF",
-                      payload: i,
+                      payload: company1,
                     });
                   }}
                 ></i>
