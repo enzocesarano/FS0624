@@ -29,7 +29,7 @@ const Job = ({ data }) => {
             })
           } else {
             dispatch({
-              type: "REMOVE_FROM_PREF_2",
+              type: "REMOVE_FROM_PREF",
               payload: data,
             });
           }
