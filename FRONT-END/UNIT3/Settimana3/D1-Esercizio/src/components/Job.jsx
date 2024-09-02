@@ -8,7 +8,7 @@ const Job = ({ data }) => {
     return store.pref.arrayPref;
   });
 
-  const selected = arrayPref.includes(data._id);
+  const selected = arrayPref.map(element => element._id).includes(data._id);
 
   const dispatch = useDispatch();
 
@@ -21,11 +21,19 @@ const Job = ({ data }) => {
         <Link to={`/${data.company_name}`}>{data.company_name}</Link>
       </Col>
       <Col xs={3}>
-        <i className={selected ? "bi bi-heart-fill text-danger" : "bi bi-heart"} onClick={() => {
-          dispatch({
-            type: 'ADD_TO_PREF',
-            payload: data,
-          })
+        <i className={selected ? "bi bi-heart-fill text-danger pointer" : "bi bi-heart pointer"} onClick={() => {
+          if(!selected) {
+            dispatch({
+              type: 'ADD_TO_PREF',
+              payload: data,
+            })
+          } else {
+            dispatch({
+              type: "REMOVE_FROM_PREF_2",
+              payload: data,
+            });
+          }
+          
         }}></i>
       </Col>
       <Col xs={6}>

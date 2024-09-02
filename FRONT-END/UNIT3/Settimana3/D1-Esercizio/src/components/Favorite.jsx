@@ -22,7 +22,7 @@ const Favorite = () => {
                 <Link className="fs-1" to={`/${company1.company_name}`}>
                   {company1.company_name}
                 </Link>
-                <i className="fs-3 bi bi-heart-fill text-danger" onClick={() => {
+                <i className="fs-3 bi bi-heart-fill text-danger pointer" onClick={() => {
                     dispatch({
                       type: "REMOVE_FROM_PREF",
                       payload: i,
