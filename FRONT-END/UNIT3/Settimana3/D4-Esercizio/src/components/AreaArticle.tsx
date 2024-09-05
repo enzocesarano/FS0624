@@ -26,7 +26,7 @@ const AreaArticle = () => {
   const [article, setArticle] = useState<NewsArticle[]>([]);
   const [pageFetch, setPageFetch] = useState('https://api.spaceflightnewsapi.net/v4/articles')
   const [page, setPage] = useState<NewPage | null>();
-
+  const [numPage, setNumPage] = useState(1)
   const navigate = useNavigate();
 
   const handleArticleClick = (id: number) => {
@@ -66,8 +66,15 @@ const AreaArticle = () => {
     <Container className="py-5">
       <Row>
         <Col xs={12} className="mb-5">
-          {page?.previous && <Button variant="outline-success" onClick={e => setPageFetch(page.previous!)}>Indietro</Button>}
-          {page?.next && <Button variant="outline-success"onClick={e => setPageFetch(page.next)}>Avanti</Button>}
+          {page?.previous ? <Button variant="outline-success" onClick={() => {
+                setPageFetch(page.previous!);
+                setNumPage(numPage - 1); 
+              }}>Indietro</Button> : <Button variant="outline-success" disabled>Indietro</Button>}
+          <span className="fs-5 mx-4 text-light">{numPage}</span>
+          {page?.next && <Button variant="outline-success"onClick={() => {
+                setPageFetch(page.next);
+                setNumPage(numPage + 1); 
+              }}>Avanti</Button>}
         </Col>
         {article.map((article) => (
           <Col
