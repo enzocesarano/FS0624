@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Article from "./Article";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export interface NewsArticle {
@@ -17,8 +17,16 @@ export interface NewsArticle {
   events: [];
 }
 
+interface NewPage {
+  next: string;
+  previous?: string;
+}
+
 const AreaArticle = () => {
   const [article, setArticle] = useState<NewsArticle[]>([]);
+  const [pageFetch, setPageFetch] = useState('https://api.spaceflightnewsapi.net/v4/articles')
+  const [page, setPage] = useState<NewPage | null>();
+
   const navigate = useNavigate();
 
   const handleArticleClick = (id: number) => {
@@ -26,7 +34,7 @@ const AreaArticle = () => {
   };
 
   const myFetch = () => {
-    fetch("https://api.spaceflightnewsapi.net/v4/articles")
+    fetch(pageFetch)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -37,6 +45,11 @@ const AreaArticle = () => {
       .then((article) => {
         console.log(article.results);
         setArticle(article.results);
+        setPage({
+          next: article.next,
+          previous: article.previous,
+        });
+        console.log(page)
       });
   };
 
@@ -44,12 +57,28 @@ const AreaArticle = () => {
     myFetch();
   }, []);
 
+  useEffect(() => {
+    myFetch();
+  }, [pageFetch]);
+
+
   return (
     <Container className="py-5">
       <Row>
+        <Col xs={12} className="mb-5">
+          {page?.previous && <Button variant="outline-success" onClick={e => setPageFetch(page.previous!)}>Indietro</Button>}
+          {page?.next && <Button variant="outline-success"onClick={e => setPageFetch(page.next)}>Avanti</Button>}
+        </Col>
         {article.map((article) => (
-          <Col key={article.id} xs={6} md={4} lg={2} className="pointer zoom mb-3" onClick={() => handleArticleClick(article.id)}>
-            <Article article={article}/>
+          <Col
+            key={article.id}
+            xs={6}
+            md={4}
+            lg={2}
+            className="pointer zoom mb-3"
+            onClick={() => handleArticleClick(article.id)}
+          >
+            <Article article={article} />
           </Col>
         ))}
       </Row>
