@@ -18,3 +18,11 @@
 .card-fix {
   height: 350px !important;
 }
+
+.divImage {
+  height: 100px !important;
+}
+
+.img-fix img {
+  object-fit: contain;
+}

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getJob } from "../redux/actions";
 
 const MainSearch = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState();
 
   const jobs = useSelector((store) => store.job.jobs)
 

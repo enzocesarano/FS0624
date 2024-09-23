@@ -31,20 +31,33 @@ const Details = () => {
       <Row>
         <Col>
           <Card className="border-0 bg-transparent text-light">
-            <Card.Img
-              variant="top" className="mb-5"
-              src={article.image_url}
-              alt={article.title}
-            />
+            <div className="divImage">
+              <Card.Img
+                variant="top"
+                className="mb-5 h-100 img-fix"
+                src={article.image_url}
+                alt={article.title}
+              />
+            </div>
+
             <Card.Body className="d-flex flex-column justify-content-between">
               <Card.Title className="display-3 fw-medium mb-5">
                 {article.title}
               </Card.Title>
               <Card.Text className="display-5 mb-5">
-                {article.summary}<a className="nav-link d-inline-block text-info ms-5 fs-3 p-1 border border-2 border-info rounded-2" href={article.url} target="_blank" rel="noreferrer">Leggi di più</a>
+                {article.summary}
+                <a
+                  className="nav-link d-inline-block text-info ms-5 fs-3 p-1 border border-2 border-info rounded-2"
+                  href={article.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Leggi di più
+                </a>
               </Card.Text>
               <Card.Text>
-                Ultimo aggiornamento: <i>{formatDate(article.updated_at).toUpperCase()}</i>
+                Ultimo aggiornamento:{" "}
+                <i>{formatDate(article.updated_at).toUpperCase()}</i>
               </Card.Text>
             </Card.Body>
           </Card>
