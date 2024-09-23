@@ -92,9 +92,7 @@ public class Main {
 
     public static double perimetroTriangolo(double lato1, double lato2, double lato3) {
         double p = (lato1 + lato2 + lato3) / 2;
-        double area = Math.sqrt(p * (p - lato1) * (p - lato2) * (p - lato3));
-
-        return area;
+        return Math.sqrt(p * (p - lato1) * (p - lato2) * (p - lato3));
     }
 
 }
