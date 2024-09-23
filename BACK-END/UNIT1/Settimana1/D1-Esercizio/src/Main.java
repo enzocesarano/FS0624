@@ -61,15 +61,15 @@ public class Main {
     }
 
 
-    public static String[] pushInArray(String[] array, String s) {
+    public static String[] pushInArray(String[] arrayString, String s) {
         String[] newArray = new String[6];
 
-        newArray[0] = array[0];
-        newArray[1] = array[1];
+        newArray[0] = arrayString[0];
+        newArray[1] = arrayString[1];
         newArray[2] = s;
-        newArray[3] = array[2];
-        newArray[4] = array[3];
-        newArray[5] = array[4];
+        newArray[3] = arrayString[2];
+        newArray[4] = arrayString[3];
+        newArray[5] = arrayString[4];
 
         return newArray;
     }
