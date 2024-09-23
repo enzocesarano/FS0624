@@ -21,7 +21,7 @@ public class Main {
         System.out.println("ESERCIZIO 4:" );
         Scanner scanner = new Scanner(System.in);
 
-        /*System.out.println("Ciao inserisci il tuo nome");
+        System.out.println("Ciao inserisci il tuo nome");
         String name = scanner.nextLine();
 
         System.out.println("Ciao inserisci il tuo cognome");
@@ -31,7 +31,7 @@ public class Main {
         String username = scanner.nextLine();
 
         System.out.println("RISULTATO: " + concatena(name, surname, username));
-        System.out.println("ESERCIZIO 4 REVERSE: " + concatena(username, surname, name));*/
+        System.out.println("ESERCIZIO 4 REVERSE: " + concatena(username, surname, name));
 
         System.out.println("ESERCIZIO 5: " + perimetroRettangolo(12.52, 14.37));
 
