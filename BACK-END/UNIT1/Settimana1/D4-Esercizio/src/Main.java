@@ -23,7 +23,7 @@ public class Main {
 
         Dipendente[] dipendenti = { d1, d2, d3 };
 
-        Object[] d4 = {d1, d2, d3, v1};
+        CheckIn[] d4 = {d1, d2, d3, v1};
 
         for (int i = 0; i < d4.length; i++){
             System.out.println(d4[i]);
