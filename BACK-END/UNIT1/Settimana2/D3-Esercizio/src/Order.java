@@ -7,15 +7,15 @@ public class Order {
     private LocalDate orderDate;
     private LocalDate deliveryDate;
     private List<Product> products;
-    private Costumer costumer;
+    private Customer customer;
 
-    public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Costumer costumer) {
+    public Order(long id, String status, LocalDate orderDate, LocalDate deliveryDate, List<Product> products, Customer customer) {
         this.id = id;
         this.status = status;
         this.orderDate = orderDate;
         this.deliveryDate = deliveryDate;
         this.products = products;
-        this.costumer = costumer;
+        this.customer = customer;
     }
 
     public List<Product> getProducts() {
@@ -26,12 +26,12 @@ public class Order {
         this.products = products;
     }
 
-    public Costumer getCostumer() {
-        return costumer;
+    public Customer getCostumer() {
+        return customer;
     }
 
-    public void setCostumer(Costumer costumer) {
-        this.costumer = costumer;
+    public void setCostumer(Customer customer) {
+        this.customer = customer;
     }
 
     public LocalDate getOrderDate() {
@@ -50,7 +50,7 @@ public class Order {
                 ", orderDate=" + orderDate +
                 ", deliveryDate=" + deliveryDate +
                 ", products=" + products +
-                ", costumer=" + costumer +
+                ", costumer=" + customer +
                 '}';
     }
 }

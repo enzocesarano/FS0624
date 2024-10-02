@@ -29,10 +29,10 @@ public class Main {
                 backpackBoy
         ));
 
-        Costumer marioRossi = new Costumer(1001, "Mario Rossi", 1);
-        Costumer giuliaBianchi = new Costumer(1002, "Giulia Bianchi", 2);
-        Costumer lucaVerdi = new Costumer(1003, "Luca Verdi", 2);
-        Costumer francescaNeri = new Costumer(1004, "Francesca Neri", 3);
+        Customer marioRossi = new Customer(1001, "Mario Rossi", 1);
+        Customer giuliaBianchi = new Customer(1002, "Giulia Bianchi", 2);
+        Customer lucaVerdi = new Customer(1003, "Luca Verdi", 2);
+        Customer francescaNeri = new Customer(1004, "Francesca Neri", 3);
 
         Order mario = new Order(1, "In elaborazione", LocalDate.of(2021, 2, 2), LocalDate.of(2021, 2, 10),
                 Arrays.asList(actionFigure, adventureNovel, toyCar, backpackBoy), marioRossi);
@@ -50,22 +50,32 @@ public class Main {
                 francesca
         ));
 
+        System.out.println("******************* ESERCIZIO 1 *******************");
+
         List<Product> listaFiltrataBooks = listProducts.stream().filter(product -> product.getCategory().equals("Books") && product.getPrice() > 100).toList();
         System.out.println(listaFiltrataBooks);
 
+
+        System.out.println("******************* ESERCIZIO 2 *******************");
+
         List<Order> listaOrderBaby = listOrdini.stream().filter(order -> order.getProducts().stream().anyMatch(product -> product.getCategory().equals("Baby"))).toList();
         System.out.println(listaOrderBaby);
+
+
+        System.out.println("******************* ESERCIZIO 3 *******************");
 
         List<Product> listaProdottiBoys = listProducts.stream().filter(product -> product.getCategory().equals("Boys")).map(product -> new Product(product.getId(), product.getName(), product.getCategory(), product.getPrice() * 0.9)).toList();
         System.out.println(listaProdottiBoys);
 
 
+        System.out.println("******************* ESERCIZIO 4 *******************");
+
         LocalDate startDate = LocalDate.of(2021, 2, 1);
         LocalDate endDate = LocalDate.of(2021, 4, 1);
 
-        List<Order> listaOrdiniClientiLv2 = listOrdini.stream().filter(order -> order.getCostumer().getTier() == 2 &&
-                (order.getOrderDate().isAfter(startDate) && order.getOrderDate().isBefore(endDate))).toList();
+        List<Order> listaOrdiniClientiLv2 = listOrdini.stream().filter(order -> order.getCostumer().getTier() == 2 && (order.getOrderDate().isAfter(startDate) && order.getOrderDate().isBefore(endDate))).toList();
         List<Product> listaProdottiLv2 = listaOrdiniClientiLv2.stream().flatMap(order -> order.getProducts().stream()).toList();
+
         System.out.println(listaProdottiLv2);
     }
 }
