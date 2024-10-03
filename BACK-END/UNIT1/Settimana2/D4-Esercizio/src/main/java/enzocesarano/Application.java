@@ -1,9 +1,11 @@
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package enzocesarano;
 
-public class Main {
+import java.time.LocalDate;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Application {
+
     public static void main(String[] args) {
         Product actionFigure = new Product(1, "Action Figure", "Boys", 19.99);
         Product adventureNovel = new Product(2, "Adventure Novel", "Books", 12.99);
@@ -34,6 +36,13 @@ public class Main {
         Customer lucaVerdi = new Customer(1003, "Luca Verdi", 2);
         Customer francescaNeri = new Customer(1004, "Francesca Neri", 3);
 
+        ArrayList<Customer> listaClienti = new ArrayList<>(Arrays.asList(
+                marioRossi,
+                giuliaBianchi,
+                lucaVerdi,
+                francescaNeri
+        ));
+
         Order mario = new Order(1, "In elaborazione", LocalDate.of(2021, 2, 2), LocalDate.of(2021, 2, 10),
                 Arrays.asList(actionFigure, adventureNovel, toyCar, backpackBoy), marioRossi);
         Order giulia = new Order(2, "Spedito", LocalDate.of(2021, 3, 20), LocalDate.of(2021, 3, 25),
@@ -50,31 +59,24 @@ public class Main {
                 francesca
         ));
 
-        System.out.println("******************* ESERCIZIO 1 *******************");
+        System.out.println("\n******************* ESERCIZIO 1 *******************\n");
+        Map<String, List<Order>> ordiniPerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCostumer().getName(), TreeMap::new, Collectors.toList()));
+        ordiniPerCliente.forEach((nomeCliente, ordini) -> System.out.println("Cliente: " + nomeCliente + ", " + ordini));
 
-        List<Product> listaFiltrataBooks = listProducts.stream().filter(product -> product.getCategory().equals("Books") && product.getPrice() > 100).toList();
-        System.out.println(listaFiltrataBooks);
+        System.out.println("\n******************* ESERCIZIO 2 *******************\n");
+        Map<String, Double> totalePerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCostumer().getName(), Collectors.summingDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum())));
+        totalePerCliente.forEach((nomeCliente, totaleOrdini) -> System.out.println("Cliente: " + nomeCliente + ", " + totaleOrdini + "€"));
 
+        System.out.println("\n******************* ESERCIZIO 3 *******************\n");
+        List<Product> prodottiPerPrezzo = listProducts.stream().sorted(Comparator.comparing(Product::getPrice).reversed()).limit(3).toList();
+        prodottiPerPrezzo.forEach((prodotto) -> System.out.println("Prodotti in ordine di prezzo: " + prodotto.getName() + ", " + prodotto.getPrice() + "€"));
 
-        System.out.println("******************* ESERCIZIO 2 *******************");
+        System.out.println("\n******************* ESERCIZIO 4 *******************\n");
+        Double mediaOrdini = listOrdini.stream().collect(Collectors.averagingDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum()));
+        System.out.println("La media totale degli ordini: " + Math.round(mediaOrdini * 100.00) / 100.00 + "€");
 
-        List<Order> listaOrderBaby = listOrdini.stream().filter(order -> order.getProducts().stream().anyMatch(product -> product.getCategory().equals("Baby"))).toList();
-        System.out.println(listaOrderBaby);
-
-
-        System.out.println("******************* ESERCIZIO 3 *******************");
-
-        List<Product> listaProdottiBoys = listProducts.stream().filter(product -> product.getCategory().equals("Boys")).map(product -> new Product(product.getId(), product.getName(), product.getCategory(), product.getPrice() * 0.9)).toList();
-        System.out.println(listaProdottiBoys);
-
-
-        System.out.println("******************* ESERCIZIO 4 *******************");
-
-        LocalDate startDate = LocalDate.of(2021, 2, 1);
-        LocalDate endDate = LocalDate.of(2021, 4, 1);
-
-        List<Order> listaOrdiniClientiLv2 = listOrdini.stream().filter(order -> order.getCostumer().getTier() == 2 && (order.getOrderDate().isAfter(startDate) && order.getOrderDate().isBefore(endDate))).toList();
-        List<Product> listaProdottiLv2 = listaOrdiniClientiLv2.stream().flatMap(order -> order.getProducts().stream()).toList();
-        System.out.println(listaProdottiLv2);
+        System.out.println("\n******************* ESERCIZIO 5 *******************\n");
+        Map<String, Double> totalePerCategoria = listProducts.stream().collect(Collectors.groupingBy(Product::getCategory, TreeMap::new, Collectors.summingDouble(Product::getPrice)));
+        totalePerCategoria.forEach((category, totalePrezzi) -> System.out.println("Category: " + category + ", " + totalePrezzi + "€"));
     }
 }
