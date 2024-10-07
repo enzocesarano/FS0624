@@ -1,0 +1,114 @@
+CREAZIONE TABELLE
+
+INSERT INTO customer (name, surname, year_birth, country)
+VALUES 
+    ('Mario', 'Rossi', 1980, 'Lombardia'),
+    ('Giulia', 'Bianchi', 1995, 'Lazio'),
+    ('Luca', 'Verdi', 1975, 'Toscana'),
+    ('Sara', 'Neri', 1988, 'Veneto'),
+    ('Marco', 'Gialli', 2001, 'Emilia-Romagna');
+
+
+INSERT INTO suppliers (supplier_name, country)
+VALUES 
+    ('Tech Supplier S.p.A.', 'Lombardia'),
+    ('Gadget Corp.', 'Piemonte'),
+    ('InfoTech S.r.l.', 'Toscana'),
+    ('Device World', 'Veneto'),
+    ('Digital Solutions', 'Lazio');
+
+
+INSERT INTO products (description, in_production, in_commercio, date_activation, date_disactivation)
+VALUES 
+    ('Smartphone', TRUE, TRUE, '2023-01-01', NULL),
+    ('Laptop', TRUE, TRUE, '2022-05-15', NULL),
+    ('Tablet', TRUE, FALSE, '2020-10-10', '2023-03-01'),
+    ('Smartwatch', FALSE, FALSE, '2019-06-20', '2021-11-15'),
+    ('Cuffie Wireless', TRUE, TRUE, '2021-08-01', NULL);
+
+
+INSERT INTO invoices (type, amount, iva, date_invoice, supllier_id, customer_id)
+VALUES 
+    ('Elettronica', 1200.50, 22, '2023-09-15', 1, 1),
+    ('Servizi', 550.00, 10, '2023-08-20', 2, 3),
+    ('Accessori', 150.75, 22, '2023-07-12', 3, 5),
+    ('Software', 320.00, 22, '2023-06-10', 4, 2),
+    ('Manutenzione', 250.30, 10, '2023-05-05', 5, 4);
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 1:
+Estrai tutti i clienti con il nome Mario.
+
+SELECT * FROM customer
+WHERE name = 'Mario'
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 2:
+Estrai tutti i clienti nati nel 1982.
+
+SELECT name, surname FROM customer
+WHERE year_birth = 1982
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 3:
+Estrarre il numero di fatture con iva al 20%.
+
+SELECT num_invoice FROM invoices
+WHERE iva = 20
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 4:
+Estrarre i prodotti attivati nel 2017 e che sono in produzione oppure in commercio.
+
+SELECT * FROM products
+WHERE EXTRACT(YEAR FROM date_activation) = 2017 AND (in_production = TRUE OR in_commercio = TRUE);
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 5:
+Estrarre le fatture con importo inferiore a 100 e i dati dei clienti ad esse collegate.
+
+SELECT * FROM customer
+WHERE customer_id IN (
+	SELECT customer_id 
+    	FROM invoices 
+    		WHERE amount < 1000
+	);
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 6:
+Riportare elenco delle fatture con aggiunta il nome del fornitore.
+
+SELECT num_invoice, amount, iva, date_invoice, supplier_name FROM invoices
+JOIN suppliers ON suppliers.supplier_id = invoices.supplier_id
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 7:
+Considerando soltanto le fatture con iva al 20%, estrarre il numero di fatture per ogni anno.
+
+SELECT EXTRACT(YEAR FROM date_invoice) AS anno, COUNT(*) AS numero_fatture FROM invoices
+WHERE iva = 20
+GROUP BY anno ORDER BY anno
+
+___________________________________________________________________________________________________________________
+
+ESERCIZIO 8:
+Riportare il numero di fatture e la somma dei relativi importi divisi per anno di fatturazione.
+
+SELECT EXTRACT(YEAR FROM date_invoice) AS anno, COUNT(*) AS numero_fatture, SUM(amount) AS somma_importo FROM invoices
+GROUP BY anno ORDER BY anno
+
+___________________________________________________________________________________________________________________
+
+
+
+
+
+
+

@@ -60,11 +60,11 @@ public class Application {
         ));
 
         System.out.println("\n******************* ESERCIZIO 1 *******************\n");
-        Map<String, List<Order>> ordiniPerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCostumer().getName(), TreeMap::new, Collectors.toList()));
+        Map<String, List<Order>> ordiniPerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCustomer().getName(), TreeMap::new, Collectors.toList()));
         ordiniPerCliente.forEach((nomeCliente, ordini) -> System.out.println("Cliente: " + nomeCliente + ", " + ordini));
 
         System.out.println("\n******************* ESERCIZIO 2 *******************\n");
-        Map<String, Double> totalePerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCostumer().getName(), Collectors.summingDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum())));
+        Map<String, Double> totalePerCliente = listOrdini.stream().collect(Collectors.groupingBy(order -> order.getCustomer().getName(), Collectors.summingDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum())));
         totalePerCliente.forEach((nomeCliente, totaleOrdini) -> System.out.println("Cliente: " + nomeCliente + ", " + totaleOrdini + "€"));
 
         System.out.println("\n******************* ESERCIZIO 3 *******************\n");
@@ -73,7 +73,7 @@ public class Application {
 
         System.out.println("\n******************* ESERCIZIO 4 *******************\n");
         Double mediaOrdini = listOrdini.stream().collect(Collectors.averagingDouble(order -> order.getProducts().stream().mapToDouble(Product::getPrice).sum()));
-        System.out.println("La media totale degli ordini: " + Math.round(mediaOrdini * 100.00) / 100.00 + "€");
+        System.out.println("La media totale degli ordini: " + mediaOrdini + "€");
 
         System.out.println("\n******************* ESERCIZIO 5 *******************\n");
         Map<String, Double> totalePerCategoria = listProducts.stream().collect(Collectors.groupingBy(Product::getCategory, TreeMap::new, Collectors.summingDouble(Product::getPrice)));

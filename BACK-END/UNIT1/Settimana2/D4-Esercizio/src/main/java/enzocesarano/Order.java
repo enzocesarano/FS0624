@@ -28,11 +28,11 @@ public class Order {
         this.products = products;
     }
 
-    public Customer getCostumer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCostumer(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
