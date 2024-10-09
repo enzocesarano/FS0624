@@ -4,10 +4,18 @@ import enzocesarano.dao.EventoDAO;
 import enzocesarano.dao.LocationDAO;
 import enzocesarano.dao.PartecipazioneDAO;
 import enzocesarano.dao.PersoneDAO;
+import enzocesarano.entities.ENUM.Gender;
+import enzocesarano.entities.ENUM.State;
+import enzocesarano.entities.ENUM.TypeEvents;
+import enzocesarano.entities.Evento;
 import enzocesarano.entities.Location;
+import enzocesarano.entities.Partecipazione;
+import enzocesarano.entities.Persone;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+
+import java.time.LocalDate;
 
 public class Application {
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("d2_esercizio");
@@ -19,7 +27,7 @@ public class Application {
         PartecipazioneDAO ticket = new PartecipazioneDAO(em);
         LocationDAO ld = new LocationDAO(em);
 
-        /*Persone vincenzo = new Persone("Vincenzo", "Cesarano", "vinc.cesarano@gmail.com", LocalDate.of(1992, 11, 12), Gender.Male);
+        Persone vincenzo = new Persone("Vincenzo", "Cesarano", "vinc.cesarano@gmail.com", LocalDate.of(1992, 11, 12), Gender.Male);
         Persone alice = new Persone("Alice", "Rossi", "alice.rossi@example.com", LocalDate.of(1987, 5, 22), Gender.Female);
         Persone marco = new Persone("Marco", "Bianchi", "marco.bianchi@example.com", LocalDate.of(1995, 8, 15), Gender.Male);
         Persone giulia = new Persone("Giulia", "Verdi", "giulia.verdi@example.com", LocalDate.of(2000, 3, 30), Gender.Female);
@@ -49,14 +57,14 @@ public class Application {
         ed.save(lauraPausini);
         ed.save(vascoRossi);
 
-        Persone vincenzo = pd.getById(1);
-        Evento geolier = ed.getById(1);
-        Partecipazione ticket1 = new Partecipazione(vincenzo, geolier, State.CONFERMATA);
+        Persone vincenzo1 = pd.getById(1);
+        Evento geolier1 = ed.getById(1);
+        Partecipazione ticket1 = new Partecipazione(vincenzo1, geolier1, State.CONFERMATA);
 
-        ticket.save(ticket1);*/
+        ticket.save(ticket1);
 
-        Location milano = ld.getById(2);
-        milano.getEventsList().stream().forEach(System.out::println);
+        Location milano1 = ld.getById(2);
+        milano1.getEventsList().stream().forEach(System.out::println);
     }
 
 }

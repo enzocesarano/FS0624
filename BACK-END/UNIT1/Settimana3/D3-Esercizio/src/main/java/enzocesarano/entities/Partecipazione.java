@@ -13,11 +13,11 @@ public class Partecipazione {
     @Column(name = "participation_id")
     private long participation_id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "person_id", nullable = false, unique = true)
     private Persone persona;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "event_id", nullable = false, unique = true)
     private Evento event;
 
