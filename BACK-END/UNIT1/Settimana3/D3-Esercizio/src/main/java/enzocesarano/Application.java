@@ -4,7 +4,7 @@ import enzocesarano.dao.EventoDAO;
 import enzocesarano.dao.LocationDAO;
 import enzocesarano.dao.PartecipazioneDAO;
 import enzocesarano.dao.PersoneDAO;
-import enzocesarano.entities.Persone;
+import enzocesarano.entities.Location;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -55,8 +55,8 @@ public class Application {
 
         ticket.save(ticket1);*/
 
-        Persone vincenzo = pd.getById(1);
-        vincenzo.getPartecipazioneList().stream().forEach(System.out::println);
+        Location milano = ld.getById(2);
+        milano.getEventsList().stream().forEach(System.out::println);
     }
 
 }
