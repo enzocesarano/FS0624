@@ -1,4 +1,4 @@
-package enzocesarano.D1_Esercizio.entities;
+package enzocesarano.D2_Esercizio.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
