@@ -4,6 +4,7 @@ import enzocesarano.D4_Esercizio.entities.Pizza;
 import enzocesarano.D4_Esercizio.entities.Toppings;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Component
 @Slf4j
+@Order(2)
 public class PizzaRunner implements CommandLineRunner {
 
     @Override

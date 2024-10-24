@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @ToString
 public class Toppings extends Prodotto {
-    @ManyToMany(mappedBy = "toppings")
+    @ManyToMany(mappedBy = "ingredienti")
     private List<Pizza> pizze;
 
     public Toppings(String name, double price, double carlories) {
