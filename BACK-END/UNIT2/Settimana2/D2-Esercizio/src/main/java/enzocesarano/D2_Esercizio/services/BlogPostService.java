@@ -19,8 +19,9 @@ public class BlogPostService {
 
     public BlogPost saveBlogPost(BlogPostPayload body) {
         Random rndm = new Random();
-        BlogPost newBlogPost = new BlogPost(body.getTitolo(), body.getCategoria(), body.getContenuto(), body.getTempo_lettura());
+        BlogPost newBlogPost = new BlogPost(body.getCategoria(), body.getTitolo(), body.getContenuto(), body.getTempo_lettura());
         newBlogPost.setId_blog_post(rndm.nextInt(1, 1000));
+        newBlogPost.setCover("https://avatars.dicebear.com/api/identicon/" + newBlogPost.getId_blog_post());
         this.blogList.add(newBlogPost);
         return newBlogPost;
     }
