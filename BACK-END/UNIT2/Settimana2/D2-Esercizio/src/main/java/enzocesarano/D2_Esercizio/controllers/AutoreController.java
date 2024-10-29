@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/autore")
+@RequestMapping("/autori")
 public class AutoreController {
 
     @Autowired
@@ -30,12 +30,12 @@ public class AutoreController {
         return this.autoreService.saveAutore(autore);
     }
 
-    @PutMapping("/autore_id")
+    @PutMapping("/{autore_id}")
     public Autore putAutore(@PathVariable int autore_id, @RequestBody AutorePayload autore) {
         return this.autoreService.findByIdAndUpdate(autore_id, autore);
     }
 
-    @DeleteMapping("/autore_id")
+    @DeleteMapping("/{autore_id}")
     public void deleteAutore(@PathVariable int autore_id) {
         this.autoreService.findByIdAndDelete(autore_id);
     }

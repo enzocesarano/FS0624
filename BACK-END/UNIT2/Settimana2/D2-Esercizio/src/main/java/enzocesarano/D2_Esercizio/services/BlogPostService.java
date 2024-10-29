@@ -28,7 +28,7 @@ public class BlogPostService {
     public BlogPost findById(int blogId) {
         BlogPost found = null;
         for (BlogPost blog : this.blogList) {
-            if (blog.getId_blog_post() == found.getId_blog_post()) found = blog;
+            if (blog.getId_blog_post() == blogId) found = blog;
         }
         if (found == null) throw new RuntimeException("Blog Post non trovato.");
         return found;

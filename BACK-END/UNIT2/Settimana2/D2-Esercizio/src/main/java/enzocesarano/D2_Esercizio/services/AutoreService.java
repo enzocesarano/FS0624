@@ -19,8 +19,9 @@ public class AutoreService {
 
     public Autore saveAutore(AutorePayload body) {
         Random rndm = new Random();
-        Autore newAutore = new Autore(body.getName(), body.getCognome(), body.getEmail(), body.getData_nascita());
+        Autore newAutore = new Autore(body.getNome(), body.getCognome(), body.getEmail(), body.getData_nascita());
         newAutore.setId_autore(rndm.nextInt(1, 1000));
+        newAutore.setAvatar("https://avatars.dicebear.com/api/identicon/" + newAutore.getId_autore());
         this.autoreList.add(newAutore);
         return newAutore;
     }
@@ -28,9 +29,9 @@ public class AutoreService {
     public Autore findById(int autoreId) {
         Autore found = null;
         for (Autore autore : this.autoreList) {
-            if (autore.getId_autore() == found.getId_autore()) found = autore;
+            if (autore.getId_autore() == autoreId) found = autore;
         }
-        if (found == null) throw new RuntimeException("Blog Post non trovato.");
+        if (found == null) throw new RuntimeException("Autore non trovato.");
         return found;
     }
 
@@ -39,7 +40,7 @@ public class AutoreService {
         for (Autore autore : this.autoreList) {
             if (autore.getId_autore() == autoreId) {
                 found = autore;
-                found.setName(body.getName());
+                found.setNome(body.getNome());
                 found.setCognome(body.getCognome());
                 found.setEmail(body.getEmail());
                 found.setData_nascita(body.getData_nascita());
