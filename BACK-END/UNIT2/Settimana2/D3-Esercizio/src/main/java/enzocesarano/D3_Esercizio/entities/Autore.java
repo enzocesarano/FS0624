@@ -26,7 +26,7 @@ public class Autore {
     private LocalDate data_nascita;
     private String avatar;
 
-    @OneToMany(mappedBy = "autore")
+    @OneToMany(mappedBy = "autore", cascade = CascadeType.REMOVE)
     @JsonManagedReference
     private List<BlogPost> blogPostList;
 

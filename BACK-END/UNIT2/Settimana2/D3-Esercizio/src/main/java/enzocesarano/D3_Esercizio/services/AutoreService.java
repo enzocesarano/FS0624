@@ -55,7 +55,6 @@ public class AutoreService {
 
     public void findByIdAndDelete(long autoreId) {
         Autore autore = this.findById(autoreId);
-        this.blogPostRepository.deleteByAutoreId(autoreId);
         this.autoreRepository.delete(autore);
     }
 }
