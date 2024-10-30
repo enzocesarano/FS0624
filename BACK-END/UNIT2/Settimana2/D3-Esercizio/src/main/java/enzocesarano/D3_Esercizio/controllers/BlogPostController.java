@@ -31,12 +31,12 @@ public class BlogPostController {
         return this.blogPostService.saveBlogPost(blogPost);
     }
 
-    @PutMapping("/blog_post_id")
+    @PutMapping("/{blog_post_id}")
     public BlogPost putBlogPost(@PathVariable int blog_post_id, @RequestBody BlogPostPayload blogPost) {
         return this.blogPostService.findByIdAndUpdate(blog_post_id, blogPost);
     }
 
-    @DeleteMapping("/blog_post_id")
+    @DeleteMapping("/{blog_post_id}")
     public void deleteBlogPost(@PathVariable int blog_post_id) {
         this.blogPostService.findByIdAndDelete(blog_post_id);
     }
