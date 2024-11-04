@@ -1,6 +1,6 @@
 package enzocesarano.D3_Esercizio.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +25,7 @@ public class BlogPost {
 
     @ManyToOne
     @JoinColumn(name = "autore")
-    @JsonBackReference
+    @JsonManagedReference
     private Autore autore;
 
     public BlogPost(String categoria, String titolo, String contenuto, int tempo_lettura, Autore autore) {
