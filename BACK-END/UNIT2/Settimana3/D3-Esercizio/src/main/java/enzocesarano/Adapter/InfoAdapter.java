@@ -12,12 +12,12 @@ public class InfoAdapter implements DataSource {
 
     @Override
     public String getNomeCompleto() {
-        return info.getNome() + " " + info.getCognome();
+        return this.info.getNome() + " " + this.info.getCognome();
     }
 
     @Override
     public int getEta() {
-        Date dataNascita = info.getDataDiNascita();
+        Date dataNascita = this.info.getDataDiNascita();
         if (dataNascita == null) return 0;
 
         Calendar nascita = Calendar.getInstance();
